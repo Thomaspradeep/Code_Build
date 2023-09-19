@@ -19,7 +19,6 @@ provider "aws"{
     alias = "Mumbai"
 }
 
------
 
 /* terraform {
     required_providers {
