@@ -29,5 +29,9 @@ resource "aws_s3_bucket_object" "object"{
     key = "Log/land_bucket"
 }
 
+<<<<<<< HEAD
 
 
+=======
+#test
+>>>>>>> 83c24fc8c9193382e21bc7ee4fafca16ad3e7604
