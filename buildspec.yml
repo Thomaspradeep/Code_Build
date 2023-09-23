@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  variables:
+    TF_VERSION: 1.1.1
+  
+phases:
+  install:
+    commands:
+      - yum install -y yum-utils
+      - yum-config-manager --add-repo https://rpm.release.hashicorp.com/AmazonLinux/hashicorp.repo
+      - yum -y install terraform-"${TF_VERSION}"
+pre_build:
+  commands:
+    - terraform init
+      -backend-config="bucket=${TFSTATE_Bucket}"
+      -backend-config="key=${TFSTATE_KEY}"
+      -backend-config="region=${REGION}"
+build:
+  commands:
+    - echo "Running Terraform"
+    - if [ "${TF_ACTION}" = "plan" ]; then terraform plan -var-file=variables.tf -no-color; fi 
+    - if [ "${TF_ACTION}" = "apply" ]; then terraform apply -var-file=variables.tf -auto-approve -no-color; fi 
+
+post_build:
+  commands:
+    - echo "Terraform Job completed"
