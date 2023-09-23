@@ -13,9 +13,6 @@ phases:
 pre_build:
   commands:
     - terraform init
-      -backend-config="bucket=${TFSTATE_Bucket}"
-      -backend-config="key=${TFSTATE_KEY}"
-      -backend-config="region=${REGION}"
 build:
   commands:
     - echo "Running Terraform"
