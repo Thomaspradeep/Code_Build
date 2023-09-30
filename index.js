@@ -4,7 +4,7 @@ const glob = require('@actions/glob');
 const github = require('@actions/github');
 const path = require('path');
 
-function getInput(inputAlternativeNames, { required = false } = {}) {
+function getInput inputAlternativeNames, { required = false } = {}) {
     if (!(inputAlternativeNames && inputAlternativeNames.length)) throw new Error("inputAlternativeNames is empty");
     let val = "";
     for (const [i, inputName] of inputAlternativeNames.entries()) {
