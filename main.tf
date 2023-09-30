@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "log_bucket" {
     bucket = "log-${var.bucket_name}"
 
-    tags = {
+    tags = 
         Env = "Dev"
     }
 }
