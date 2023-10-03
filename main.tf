@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "CDS_Infra_bucket" {
     bucket = var.bucket_name
     logging{
         target_bucket = aws_s3_bucket.log_bucket.id
-        target_prefix = "Log/land_bucket.txt"
+        target_prefix = "Log/land_bucket"
     }
 
     tags = {
@@ -26,7 +26,7 @@ resource "aws_s3_bucket_versioning" "version"{
 #readon only
 resource "aws_s3_bucket_object" "object"{
     bucket = aws_s3_bucket.log_bucket.id
-    key = "Log/land_bucket.txt"
+    key = "Log/land_bucket"
 }
 
 #test and working fine
