@@ -13,6 +13,7 @@ pre_build:
       -backend-config="bucket=${TFSTATE_BUCKET}"
       -backend-config="key=${TFSTATE_KEY}"
       -backend-config="region=${REGION}"
+      - echo "Running Terraform"
 build:
   commands:
     - echo "Running Terraform"
