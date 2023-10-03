@@ -8,12 +8,11 @@ phases:
       - yum -y install terraform-"${TF_VERSION}"
       - echo "running terraform"
 pre_build:
-  commands:
-    - terraform init
-      -backend-config="bucket=${TFSTATE_BUCKET}"
-      -backend-config="key=${TFSTATE_KEY}"
-      -backend-config="region=${REGION}"
-      - echo "Running Terraform"
+    commands:
+      - terraform init
+        -backend-config="bucket=${TFSTATE_BUCKET}"
+        -backend-config="key=${TFSTATE_KEY}"
+        -backend-config="region=${REGION}"
 build:
   commands:
     - echo "Running Terraform"
