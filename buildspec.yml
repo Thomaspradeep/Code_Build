@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo "Running Terraform"
-      - if [ "${TF_ACTION}" = "plan" ]; then terraform plan -var-file=variables.tfvars -no-color; fi 
+      - if [ "${TF_ACTION}" = "plan" ]; then terraform plan -var-file=variables.tfvars; fi 
       - if [ "${TF_ACTION}" = "apply" ]; then terraform apply -var-file=variables.tfvars -auto-approve -no-color; fi 
 
   post_build:
