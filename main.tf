@@ -28,5 +28,3 @@ resource "aws_s3_bucket_object" "object"{
     bucket = aws_s3_bucket.log_bucket.id
     key = "Log/land_bucket"
 }
-
-#test
