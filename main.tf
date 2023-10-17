@@ -4,7 +4,13 @@ resource "aws_s3_bucket" "log_bucket" {
     tags = {
         Env = "Dev"
     }
+resource "aws_s3_bucket_versioning" "log_bucket"{
+    bucket = aws_s3_bucket.log_bucket.id
+    versioning_configuration{
+        status  = "Enabled"
+    }
 }
+
 resource "aws_s3_bucket" "CDS_Infra_bucket" {
     bucket = var.bucket_name
     logging{
