@@ -12,3 +12,7 @@ variable "bucket_name" {
 
 #for testing adding this command
 
+variable "credit_clients_list" {
+    type = map(any)
+}
+
