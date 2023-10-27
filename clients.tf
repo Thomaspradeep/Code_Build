@@ -7,5 +7,6 @@ module "d3_credit_clients" {
 
     providers = {
         aws = aws
+        aws.replica = aws.replica
     }
 }
