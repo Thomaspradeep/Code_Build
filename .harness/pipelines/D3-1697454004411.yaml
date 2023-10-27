@@ -1,0 +1,34 @@
+pipeline:
+  identifier: Build_D3_1697454016634
+  name: Build D3
+  orgIdentifier: default
+  projectIdentifier: Myproject
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github
+        repoName: D3
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    shell: Sh
+                    command: echo "hello world"
+                  timeout: ""
+                  type: Run
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+        type: CI
