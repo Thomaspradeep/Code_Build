@@ -30,7 +30,7 @@ resource "aws_s3_bucket_object" "object"{
 
 #data
 
-resource "aws_s3_bucket" "Roll_Back" {
+resource "aws_s3_bucket" "roll_back" {
     bucket = "log-rollback}"
    versioning{
     enabled = true
