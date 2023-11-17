@@ -9,10 +9,3 @@ variable "bucket_name" {
     default = "matthews-bucket-091423"
     description = "Creating bucket on 14/09/2023 for learning purpose"
 }
-
-#for testing adding this command
-
-variable "credit_clients_list" {
-    type = map(any)
-}
-
