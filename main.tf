@@ -22,4 +22,3 @@ resource "aws_s3_bucket" "CDS_Infra_bucket" {
         Env = "Dev"
     }
 }
-
