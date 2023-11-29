@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "CDS_Infra_bucket" {
     }
 }
 
-resource "aws_s3_bucket_object" "object"{
+resource "aws_s3_bucket_object" "log_bucket"{
     bucket = aws_s3_bucket.log_bucket.id
     key = "Log/land_bucket"
 }
