@@ -1,20 +1,18 @@
-# Terraform Block
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.67.0"
+      version = "4.39.0"
     }
   }
-   #Adding Backend as S3 for Remote State Storage
- backend "s3" {
+  backend "s3" {
     bucket = "matthews-bucket-91423"
     key    = "dev/terraform.tfstate"
-    region = "ap-south-1"   
+    region = "ap-south-1"
   }
 }
 
+# Configure the AWS Provider
 provider "aws" {
-    region = "ap-south-1"
-    alias = "Mumbai"
+  region = "ap-south-1"
 }
