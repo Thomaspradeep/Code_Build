@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.39.0"
+      version = "4.67.0"
     }
   }
    #Adding Backend as S3 for Remote State Storage
@@ -14,22 +14,7 @@ terraform {
   }
 }
 
-provider "aws"{
-    region = var.aws_region
-    alias = "Mumbai"
-}
-
-
-/* terraform {
-    required_providers {
-      aws = {
-        source = "Hashicorp/aws"
-        version = "~> 4.0"
-      }
-    }    
-}
-
-provider "aws"{
+provider "aws" {
     region = "ap-south-1"
     alias = "Mumbai"
-} */
+}
