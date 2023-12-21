@@ -29,7 +29,7 @@ resource "aws_s3_bucket_object" "log_bucket"{
 }
 
 resource "aws_s3_bucket" "glue_bucket_matthew"{
-    bucket = "bucket101matthew"
+    bucket = "bucket101matthew1"
     
     versioning{
     enabled = true
