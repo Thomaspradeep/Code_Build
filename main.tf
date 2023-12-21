@@ -30,9 +30,20 @@ resource "aws_s3_bucket_object" "log_bucket"{
 
 resource "aws_s3_bucket" "glue_bucket_matthew"{
     bucket = "bucket101matthew"
-    region = "us-east-1"
     
     versioning{
     enabled = true
 }
+}
+
+resource "aws_iam_user" "transunion"{
+    name = "Transunion"
+}
+
+resource "aws_iam_access_key" "transunion"{
+    user = aws_iam_user.transunion.name
+}
+
+output "aws_iam_smtp_password_v4"{
+     value = aws_iam_access_key.transunion.ses_smtp_password_v4
 }
