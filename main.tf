@@ -53,7 +53,7 @@ output "Transunion"{
 }
 
 data "aws_iam_user" "datauser1_user"{
-    user_name = "datauser1"
+    name = "datauser1"
 }
 resource "aws_iam_access_key" "datauser1_access_key"{
     user = data.aws_iam_user.datauser1_user.name
