@@ -36,18 +36,33 @@ resource "aws_s3_bucket" "glue_bucket_matthew"{
 }
 }
 
-resource "aws_iam_user" "transunion"{
+resource "aws_iam_user" "transunion_user"{
     name = "Transunion"
 }
 
-resource "aws_iam_access_key" "transunion"{
-    user = aws_iam_user.transunion.name
+resource "aws_iam_access_key" "transunion_access_key"{
+    user = aws_iam_user.transunion_user.name
 }
 
-output "credential"{
+output "Transunion"{
      value = {
-        "key" = aws_iam_access_key.transunion.id
-        "secret" = aws_iam_access_key.transunion.secret
+        "key" = aws_iam_access_key.transunion_access_key.id
+        "secret" = aws_iam_access_key.transunion_access_key.secret
+     }    
+     sensitive = true
+}
+
+data "aws_iam_user" "datauser1_user"{
+    user_name = "datauser1"
+}
+resource "aws_iam_access_key" "datauser1_access_key"{
+    user = data.aws_iam_user.datauser1_user.name
+}
+
+output "datauser1_access_key"{
+     value = {
+        "key" = aws_iam_access_key.datauser1_access_key.id
+        "secret" = aws_iam_access_key.datauser1_access_key.secret
      }    
      sensitive = true
 }
