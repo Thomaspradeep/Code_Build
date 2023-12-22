@@ -45,6 +45,8 @@ resource "aws_iam_access_key" "transunion"{
 }
 
 output "aws_iam_smtp_password_v4"{
-     value = aws_iam_access_key.transunion.ses_smtp_password_v4
-     sensitive = false
+     value = {
+        "key" = aws_iam_access_key.transunion.id
+        "secret" = aws_iam_access_key.tranunion.secret
+     }    
 }
