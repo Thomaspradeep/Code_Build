@@ -36,18 +36,18 @@ resource "aws_s3_bucket" "glue_bucket_matthew"{
 }
 }
 
-resource "aws_iam_user" "transunion_user"{
+resource "aws_iam_user" "transunion"{
     name = "Transunion"
 }
 
-resource "aws_iam_access_key" "transunion_access_key"{
-    user = aws_iam_user.transunion_user.name
+resource "aws_iam_access_key" "transunion"{
+    user = aws_iam_user.transunion.name
 }
 
 output "Transunion"{
      value = {
-        "key" = aws_iam_access_key.transunion_access_key.id
-        "secret" = aws_iam_access_key.transunion_access_key.secret
+        "key" = aws_iam_access_key.transunion.id
+        "secret" = aws_iam_access_key.transunion.secret
      }    
      sensitive = true
 }
