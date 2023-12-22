@@ -47,6 +47,6 @@ resource "aws_iam_access_key" "transunion"{
 output "aws_iam_smtp_password_v4"{
      value = {
         "key" = aws_iam_access_key.transunion.id
-        "secret" = aws_iam_access_key.tranunion.secret
+        "secret" = aws_iam_access_key.transunion.secret
      }    
 }
