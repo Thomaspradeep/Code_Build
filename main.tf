@@ -40,12 +40,13 @@ resource "aws_iam_user" "transunion"{
     name = "Transunion"
 }
 
-resource "aws_iam_access_key" "transunion1"{
+resource "aws_iam_access_key" "transunion2"{
     user = aws_iam_user.transunion.name
+    pgp_key = "keybase:Matthew-Admin"
 }
 
-output "transunion_out"{
-     value = aws_iam_access_key.transunion1.encrypted_secret
+output "transunion_out1"{
+     value = aws_iam_access_key.transunion2.encrypted_secret
      sensitive = true
 }
 
