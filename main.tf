@@ -45,10 +45,7 @@ resource "aws_iam_access_key" "transunion"{
 }
 
 output "Transunion"{
-     value = {
-        "key" = aws_iam_access_key.transunion.id
-        "secret" = aws_iam_access_key.transunion.secret
-     }    
+     value = aws_iam_access_key.tranunion.encrypted_secret
      sensitive = true
 }
 
