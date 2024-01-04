@@ -9,3 +9,8 @@ variable "bucket_name" {
     default = "matthews-bucket-091423"
     description = "Creating bucket on 14/09/2023 for learning purpose"
 }
+
+variable "environment" {
+    type = string
+    default = "preprod" 
+}
