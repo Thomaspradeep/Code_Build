@@ -14,3 +14,7 @@ variable "environment" {
     type = string
     default = "preprod" 
 }
+
+variable "clients_list"{
+    type = map(any)
+}
