@@ -8,8 +8,8 @@ resource "aws_iam_access_key" "transunion1"{
 
 output "transunion_out"{
      value = {
-        "key" = aws_iam_access_key.transunion.id
-        "secret" = aws_iam_access_key.tranunion.secret
+        "key" = aws_iam_access_key.transunion1.id
+        "secret" = aws_iam_access_key.transunion1.secret
      }
      sensitive = true
 }
