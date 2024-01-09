@@ -5,7 +5,7 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_lambda_function" "transunion"{
-    filename = "accesskey.zip"
+    filename = "${path.module}/python/accesskey.zip"
     function_name = "transunion"
     description = "Transunion Access key and Secret key pair rotation"
     role = var.lambda_role
