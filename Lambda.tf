@@ -9,7 +9,7 @@ resource "aws_lambda_function" "transunion"{
     function_name = "Transunion_Access_Key"
     description = "Transunion Access key and Secret key pair rotation"
     role = var.lambda_role
-    handler = "accesskey.lambda_handler"
+    handler = "lambda.lambda_handler"
     timeout = 900
     memory_size = 2048
     runtime = "python3.9"
