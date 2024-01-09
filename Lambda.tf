@@ -1,7 +1,7 @@
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "AccessKey.py"
-  output_path = "accesskey.zip"
+  source_file = "${path.module}/python/"
+  output_path = "${path.module}/python/accesskey.zip"
 }
 
 resource "aws_lambda_function" "transunion"{
@@ -9,7 +9,7 @@ resource "aws_lambda_function" "transunion"{
     function_name = "transunion"
     description = "Transunion Access key and Secret key pair rotation"
     role = var.lambda_role
-    handler = "index.lambda_handler"
+    handler = "accesskey.lambda_handler"
     timeout = 900
     memory_size = 2048
     runtime = "python3.9"
