@@ -1,6 +1,6 @@
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/python/"
+  source_file = "${path.module}/python/accesskey.py"
   output_path = "${path.module}/python/accesskey.zip"
 }
 
