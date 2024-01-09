@@ -28,3 +28,7 @@ output "datauser1_access_key"{
      }    
      sensitive = true
 }
+
+data "aws_iam_role" "Admin_role" {
+  name = "Admin_role"
+}
