@@ -13,4 +13,8 @@ resource "aws_lambda_function" "transunion"{
     timeout = 900
     memory_size = 2048
     runtime = "python3.9"
+    architectures = ["x86_64"]
+    tags = {
+      name = "Transuion"
+    }
 }
