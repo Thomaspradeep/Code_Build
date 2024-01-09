@@ -18,3 +18,7 @@ variable "environment" {
 variable "clients_list"{
     type = map(any)
 }
+
+variable "lambda_role"{
+    type = string
+}
