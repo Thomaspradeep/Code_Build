@@ -5,11 +5,11 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_lambda_function" "transunion"{
-    filename = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
+    filename = "${data.archive_file.lambda.output_path}"
     function_name = "transunion"
     description = "Transunion Access key and Secret key pair rotation"
     role = var.lambda_role
-    handler = "transunion_accesskey_rotation.lambda_handler"
+    handler = "accestransunion_accesskey_rotationskey.lambda_handler"
     timeout = 900
     memory_size = 2048
     runtime = "python3.9"
