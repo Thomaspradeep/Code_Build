@@ -47,7 +47,6 @@ def SnsPublish(key, secret):
 
 def lambda_handler(event, context):
     accesskey = ListKey(uname)
-    status = ListKey(uname)
     delete = DeleteKey(accesskey,uname)
     create = CreateKey(uname)
     AccessKey = create[0]
