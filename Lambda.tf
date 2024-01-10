@@ -1,11 +1,11 @@
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/transunion_accesskey_rotation/transunion_accesskey_rotation.py"
-  output_path = "${path.module}/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
+  source_file = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.py"
+  output_path = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
 }
 
 resource "aws_lambda_function" "transunion"{
-    filename = "${path.module}/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
+    filename = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
     function_name = "transunion"
     description = "Transunion Access key and Secret key pair rotation"
     role = var.lambda_role
