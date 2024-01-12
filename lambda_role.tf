@@ -41,6 +41,6 @@ resource "aws_iam_policy" "transunion_lambda_sns_iam_policy" {
             }
 
         ]
-    }
+}
 EOF
 }
