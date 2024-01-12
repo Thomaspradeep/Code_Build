@@ -24,7 +24,7 @@ resource "aws_iam_policy" "transunion_lambda_sns_iam_policy" {
     name = "transunion_lambda_sns_iam_policy"
     path = "/"
     policy = <<EOF
-    {
+{
         "Version": "2012-10-17",
         "Statement": [
             {
