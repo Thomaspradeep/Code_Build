@@ -8,7 +8,7 @@ resource "aws_lambda_function" "transunion"{
     filename = "${data.archive_file.lambda.output_path}"
     function_name = "transunion"
     description = "Transunion Access key and Secret key pair rotation"
-    role = var.lambda_role
+    role = aws_iam_role.tranunion_lambda_role
     handler = "transunion_accesskey_rotation.lambda_handler"
     timeout = 900
     memory_size = 2048
