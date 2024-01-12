@@ -37,11 +37,11 @@ def CreateKey(uname):
     print("\n *****************************")
     return AccessKeyId, SecretAccessKey
 
-def SnsPublish(key, secret):
+def SnsPublish(key, secret,uname):
     TargetArn = 'arn:aws:sns:us-east-1:941598205732:sns101'
     response1 = sns.publish(
         TargetArn = TargetArn,
-        Message = "This is your new Access key {} and SecretKey {}".format(key,secret),
+        Message = "Hi {}, This is your new Access key {} and SecretKey {}".format(uname,key,secret),
         Subject='Previous Key has been deleted'
 )
 
@@ -51,7 +51,7 @@ def lambda_handler(event, context):
     create = CreateKey(uname)
     AccessKey = create[0]
     SecretAccessKey = create[1]
-    sns = SnsPublish(AccessKey, SecretAccessKey)
+    sns = SnsPublish(AccessKey, SecretAccessKey,uname)
     print(f'''Successfully new AccessKey and SecretKey created for Transunion User
     
           ******************************* ''' )
