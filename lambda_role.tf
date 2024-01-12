@@ -26,15 +26,21 @@ resource "aws_iam_policy" "transunion_lambda_sns_iam_policy" {
     policy = <<EOF
     {
         "Version": "2012-10-17"
-        "Statement": [ 
+        "Statement": [
+
             {
-                "Effect": "Allow"
-                "Action":[ 
-                    "sns:*",
-                    "iam:*"
-                ],
-                "Resource": "*"
+            "Sid": "Iam",
+            "Effect": "Allow",
+            "Action": "iam:*",
+            "Resource": "*"
             }
+            {
+            "Sid": "SNS",
+            "Effect": "Allow",
+            "Action": "sns:*",
+            "Resource": "*"
+            }
+
         ]
     }
 EOF
