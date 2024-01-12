@@ -4,7 +4,7 @@ resource "aws_iam_role" "tranunion_lambda_role" {
         aws_iam_policy.transunion_lambda_sns_iam_policy.arn
     ]
     assume_role_policy = <<EOF
-    {
+{
         "Version": "2012-10-17",
         "Statement": [
             {
