@@ -27,18 +27,18 @@ resource "aws_iam_policy" "transunion_lambda_sns_iam_policy" {
     {
         "Version": "2012-10-17",
         "Statement": [
+            {
+                "Sid": "Iam",
+                "Effect": "Allow",
+                "Action": "iam:*",
+                "Resource": "*"
+            },
 
             {
-            "Sid": "Iam",
-            "Effect": "Allow",
-            "Action": "iam:*",
-            "Resource": "*"
-            }
-            {
-            "Sid": "SNS",
-            "Effect": "Allow",
-            "Action": "sns:*",
-            "Resource": "*"
+                "Sid": "SNS",
+                "Effect": "Allow",
+                "Action": "sns:*",
+                "Resource": "*"
             }
 
         ]
