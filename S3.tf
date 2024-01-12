@@ -28,18 +28,12 @@ resource "aws_s3_bucket_object" "log_bucket"{
     key = "Log/land_bucket"
 }
 
-resource "aws_s3_bucket" "glue_bucket_matthew"{
-    bucket = "bucket101matthew1"
-    
-    versioning{
-    enabled = true
-    }
-}
 
-module "glue_bucket_matthew"{
-    for_each = var.clients_list
-    source = "./modules/client_bucket_directories"
+
+# module "glue_bucket_matthew"{
+#     for_each = var.clients_list
+#     source = "./modules/client_bucket_directories"
     
-    bucket_id = aws_s3_bucket.glue_bucket_matthew.id
-    client_name = each.key
-}
+#     bucket_id = aws_s3_bucket.glue_bucket_matthew.id
+#     client_name = each.key
+# }
