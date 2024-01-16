@@ -22,7 +22,7 @@ resource "aws_lambda_function" "transunion"{
     memory_size = 2048
     runtime = "python3.9"
     architectures = ["x86_64"]
-    #source_code_hash = "${data.archive_file.lambda.output_base64sha256}"
+    source_code_hash = "${data.archive_file.lambda.output_base64sha256}"
     tags = {
       name = "Transuion"
     }
