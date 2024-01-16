@@ -19,6 +19,6 @@ resource "aws_glue_catalog_database" "glue_credit_process_databases" {
 #   }
 # }
 
-resource "aws_glue_catalog_database" "glue_credit_process_databases_test"{
-    name = "credit_process_test_${var.environment}"  
-}
+# resource "aws_glue_catalog_database" "glue_credit_process_databases_test"{
+#     name = "credit_process_test_${var.environment}"  
+# }
