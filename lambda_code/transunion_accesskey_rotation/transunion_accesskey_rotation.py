@@ -17,7 +17,6 @@ def ListKey(UserName):
         UserName = UserName
     )
     OldAccessKey = ListKey['AccessKeyMetadata'][0]['AccessKeyId']
-    print('\n')
     return OldAccessKey
 
 #delete existing Access key 
@@ -67,7 +66,7 @@ def lambda_handler(event, context):
     OldAccessKey = ListKey(UserName)
     logging.info("Deleting Old Access Key")
     DeleteKey = DeleteKey(OldAccessKey,UserName)
-    logging.info("Generating Old Access Key")
+    logging.info("Generating new Access Key")
     CreateKey = CreateKey(UserName)
     AccessKey = CreateKey[0]
     SecretAccessKey = CreateKey[1]
