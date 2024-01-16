@@ -29,7 +29,12 @@ resource "aws_iam_policy" "transunion_lambda_sns_iam_policy" {
             {
                 "Sid": "Iam",
                 "Effect": "Allow",
-                "Action": "iam:*",
+                "Action": [
+                    "iam:DeleteAccessKey",
+				    "iam:UpdateAccessKey",
+				    "iam:CreateAccessKey",
+				    "iam:ListAccessKeys"
+                ],
                 "Resource": "*"
             },
 
