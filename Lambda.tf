@@ -1,3 +1,8 @@
+resource "null_resource" "dummy_trigger" {
+  triggers = {
+    timestamp = timestamp()
+  }
+}
 data "archive_file" "lambda" {
   type        = "zip"
   source_file = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.py"
