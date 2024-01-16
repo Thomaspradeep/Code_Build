@@ -72,5 +72,3 @@ def lambda_handler(event, context):
     SecretAccessKey = GeneratedKey[1]
     logging.info("Sending Email to End User with Latest Access ID and Secret Key")
     sns = SnsPublish(AccessKey, SecretAccessKey,UserName)
-
-#dummy 
