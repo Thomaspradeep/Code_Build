@@ -5,8 +5,8 @@ resource "null_resource" "dummy_trigger" {
 }
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.py"
-  output_path = "${path.module}/lambda_code/transunion_accesskey_rotation/transunion_accesskey_rotation.zip"
+  source_dir = "lambda_code/transunion_accesskey_rotation"
+  output_path = "transunion_accesskey_rotation.zip"
   depends_on = [ 
     null_resource.dummy_trigger
    ]
