@@ -3,7 +3,7 @@ import boto3
 import logging
 
 #Configure the logging system
-logging.basicconfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 
 UserName = 'datauser3'
