@@ -16,8 +16,8 @@ def ListKey(UserName):
     ListKey = iam.list_access_keys(
         UserName = UserName
     )
-    OldAccessKey = ListKey['AccessKeyMetadata'][0]['AccessKeyId']
-    return OldAccessKey
+    AccessKey = ListKey['AccessKeyMetadata'][0]['AccessKeyId']
+    return AccessKey
 
 #delete existing Access key 
 
@@ -33,9 +33,9 @@ def CreateKey(UserName):
     CreateKey = iam.create_access_key(
         UserName=UserName
     )
-    NewAccessKey = CreateKey['AccessKey']['AccessKeyId']
-    NewSecretAccessKey = CreateKey['AccessKey']['SecretAccessKey']
-    return NewAccessKey, NewSecretAccessKey
+    NewAccessKeyId = CreateKey['AccessKey']['AccessKeyId']
+    NewSecretKey = CreateKey['AccessKey']['SecretAccessKey']
+    return NewAccessKeyId, NewSecretKey
 
 # Send SNS notification to user
 
@@ -65,10 +65,10 @@ def lambda_handler(event, context):
     logging.info("Listing Old Access Key")
     OldAccessKey = ListKey(UserName)
     logging.info("Deleting Old Access Key")
-    DeleteKey = DeleteKey(OldAccessKey,UserName)
+    DeleteOldKey = DeleteKey(OldAccessKey,UserName)
     logging.info("Generating new Access Key")
-    CreateKey = CreateKey(UserName)
-    AccessKey = CreateKey[0]
-    SecretAccessKey = CreateKey[1]
+    GeneratedKey = CreateKey(UserName)
+    AccessKey = GeneratedKey[0]
+    SecretAccessKey = GeneratedKey[1]
     logging.info("Sending Email to End User with Latest Access ID and Secret Key")
     sns = SnsPublish(AccessKey, SecretAccessKey,UserName)
