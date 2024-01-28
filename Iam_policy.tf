@@ -9,7 +9,6 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
 			"Action": [
-                "s3:ListBucket",
                 "s3:ListAllMyBuckets"
                 ],
 			"Resource": "*"
