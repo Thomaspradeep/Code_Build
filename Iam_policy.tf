@@ -9,7 +9,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
 			"Action": [
-                "s3:List*"
+                "s3:ListBucket"
                 ],
 			"Resource": "*"
 		},
@@ -17,10 +17,11 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Sid": "VisualEditor1",
 			"Effect": "Allow",
 			"Action": [
-                "s3:ListObject"
+                "s3:ListObject*"
                 ],
 			"Resource": [
-                "arn:aws:s3:::matthews-bucket-91423"
+                "arn:aws:s3:::matthews-bucket-91423",
+                "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
 		}
 	]
