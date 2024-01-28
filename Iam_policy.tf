@@ -8,8 +8,13 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 		{
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
-			"Action": "s3:*",
-			"Resource": "arn:aws:s3:::matthews-bucket-91423"
+			"Action": [
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:GetObject*",
+                "s3:GetBucket*"
+            ],
+			"Resource": "arn:aws:s3:::*matthew*"
 		}
 	]
 }
