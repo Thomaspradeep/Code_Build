@@ -32,3 +32,7 @@ output "datauser1_access_key"{
 data "aws_iam_role" "Admin_role" {
   name = "Admin_role"
 }
+
+data "aws_iam_user" "user162"{
+    user_name = "1685162"
+}
