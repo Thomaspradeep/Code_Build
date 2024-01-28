@@ -10,7 +10,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
             "Effect": "Deny",
             "Action": "ec2:*",
             "Resource": "*"
-        }
+        },
         {
             "Sid": "AllowReadAccess",
             "Effect": "Allow",
