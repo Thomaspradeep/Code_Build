@@ -10,6 +10,16 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Effect": "Allow",
 			"Action": "s3:*",
 			"Resource": "*"
+		},
+        {
+			"Sid": "VisualEditor1",
+			"Effect": "Allow",
+			"Action": [
+                "s3:GetObject*",
+                "s3:ListObject*",
+                "s3:PutObject*"
+            ],
+			"Resource": "*"
 		}
 	]
 }
