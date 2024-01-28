@@ -75,7 +75,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 				"s3:GetAccessPointPolicy",
 				"s3:GetObjectVersion"
 			],
-			"Resource": "arn:aws:s3::: matthews-bucket-91423"
+			"Resource": "*"
 		}
 	]
 }
