@@ -14,7 +14,10 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
                 "s3:GetObject*",
                 "s3:GetBucket*"
             ],
-			"Resource": "arn:aws:s3:::*matthew*"
+			"Resource": [
+                "arn:aws:s3:::*matthew*",
+                "arn:aws:s3:::*matthew"
+            ]
 		}
 	]
 }
