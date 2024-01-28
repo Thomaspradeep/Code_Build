@@ -8,7 +8,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
         {
             "Sid": "AllowReadAccess",
             "Effect": "Allow",
-            "Action": "*"
+            "Action": "*",
             "Resource" : "*"
         }
     ]
