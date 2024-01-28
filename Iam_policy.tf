@@ -76,23 +76,6 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 				"s3:GetObjectVersion"
 			],
 			"Resource": "arn:aws:s3::: matthews-bucket-91423"
-		},
-		{
-			"Sid": "VisualEditor1",
-			"Effect": "Allow",
-			"Action": [
-				"s3:ListStorageLensConfigurations",
-				"s3:ListAccessPointsForObjectLambda",
-				"s3:GetAccessPoint",
-				"s3:GetAccountPublicAccessBlock",
-				"s3:ListAllMyBuckets",
-				"s3:ListAccessPoints",
-				"s3:ListAccessGrantsInstances",
-				"s3:ListJobs",
-				"s3:ListMultiRegionAccessPoints",
-				"s3:ListStorageLensGroups"
-			],
-			"Resource": "*"
 		}
 	]
 }
