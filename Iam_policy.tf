@@ -16,7 +16,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
             "Effect": "Allow",
             "Action": [
                 "ec2:Describe*",
-                "ec2:Get*,
+                "ec2:Get*",
                 "ec2:Export*"
             ],
             "Resource" : "*"
