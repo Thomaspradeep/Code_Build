@@ -17,7 +17,9 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Sid": "VisualEditor1",
 			"Effect": "Allow",
 			"Action": [
-                "s3:PutObject*"
+                "s3:PutObject*",
+                "s3:GetObject*",
+                "s3:DeleteObject*"
                 ],
 			"Resource": [
                 "arn:aws:s3:::matthews-bucket-91423",
