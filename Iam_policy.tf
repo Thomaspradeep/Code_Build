@@ -20,7 +20,8 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
                 "s3:PutObject*"
                 ],
 			"Resource": [
-                "arn:aws:s3:::matthews-bucket-91423"
+                "arn:aws:s3:::matthews-bucket-91423",
+                "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
 		}
 	]
