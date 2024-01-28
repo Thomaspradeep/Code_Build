@@ -11,10 +11,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Action": [
                 "s3:List*"
                 ],
-			"Resource": [
-                "arn:aws:s3:::matthews-bucket-91423",
-                "arn:aws:s3:::matthews-bucket-91423/*"
-                ]
+			"Resource": "*"
 		},
         {
 			"Sid": "VisualEditor1",
