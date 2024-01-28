@@ -6,15 +6,20 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
+            "Sid": "DenyEc2access",
+            "Effect": "Deny",
             "Action": "ec2:*",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:Region": "ap-south-1"
-                }
-            }
+            "Resource": "*"
+        }
+        {
+            "Sid": "AllowReadAccess",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:Get*,
+                "ec2:Export*"
+            ],
+            "Resource" : "*"
         }
     ]
 }
