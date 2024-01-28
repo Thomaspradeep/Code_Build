@@ -8,7 +8,9 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 		{
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
-			"Action": "s3:ListObject*",
+			"Action": [
+                "s3:ListObject*"
+                ],
 			"Resource": "*"
 		}
 	]
