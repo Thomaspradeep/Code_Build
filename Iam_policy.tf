@@ -6,12 +6,6 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "DenyEc2access",
-            "Effect": "Deny",
-            "Action": "ec2:*",
-            "Resource": "*"
-        },
-        {
             "Sid": "AllowReadAccess",
             "Effect": "Allow",
             "Action": [
