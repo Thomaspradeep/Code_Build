@@ -6,9 +6,9 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "AllowReadAccess",
+            "Sid": "S3ListBucketAccess",
             "Effect": "Allow",
-            "Action": "*",
+            "Action": "s3:ListBucket",
             "Resource" : "*"
         }
     ]
