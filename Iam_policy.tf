@@ -5,6 +5,13 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 {
 	"Version": "2012-10-17",
 	"Statement": [
+        {
+            "Sid": "S3bucket",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Allow": "*",
+            "Resource": "*"
+        },
 		{
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
