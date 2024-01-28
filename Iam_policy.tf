@@ -16,7 +16,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 			"Effect": "Allow",
 			"Action": [
                 "s3:GetObject*",
-                "s3:ListObject*",
+                "s3:DeleteObject*",
                 "s3:PutObject*"
             ],
 			"Resource": "*"
