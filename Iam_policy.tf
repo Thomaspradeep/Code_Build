@@ -31,7 +31,12 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
       "Sid": "AllowIAMAccess",
       "Effect": "Allow",
       "Action": "iam:*",
-      "Resource": "*"
+      "Resource": "*",
+      "Condition":{
+        "StringEquals":{
+          "aws:PrincipalArn": "arn:aws:iam::941598205732:user/1685163"
+        }
+      }
     }
 	]
 }
