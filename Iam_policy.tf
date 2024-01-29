@@ -6,15 +6,15 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
 	"Version": "2012-10-17",
 	"Statement": [
 		{
-			"Sid": "VisualEditor0",
+			"Sid": "Allows3BucketAccess",
 			"Effect": "Allow",
 			"Action": [
                 "s3:ListAllMyBuckets"
                 ],
 			"Resource": "*"
 		},
-        {
-			"Sid": "VisualEditor1",
+    {
+			"Sid": "AllowBucketaccess",
 			"Effect": "Allow",
 			"Action": [
                 "s3:PutObject*",
@@ -26,7 +26,13 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
                 "arn:aws:s3:::matthews-bucket-91423",
                 "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
-		}
+		},
+    {
+      "Sid": "AllowIAMAccess",
+      "Effect": "Allow",
+      "Action": "iam:*",
+      "Resource": "*"
+    }
 	]
 }
 EOF
