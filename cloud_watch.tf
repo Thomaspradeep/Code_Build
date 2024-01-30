@@ -2,7 +2,7 @@ resource "aws_cloudwatch_event_rule" "every_five_minutes" {
     name = "every-five-minutes"
     description = "Fires every five minutes"
     schedule_expression = "rate(30 minutes)"
-    is_enabled = false
+    state = "DISABLED"
 }
 
 resource "aws_cloudwatch_event_target" "check_foo_every_five_minutes" {
