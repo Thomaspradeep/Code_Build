@@ -19,8 +19,16 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_check_foo" {
     source_arn = aws_cloudwatch_event_rule.every_five_minutes.arn
 }
 
+
+resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
+    name = "every-five-minutes"
+    description = "Fires every five minutes"
+    schedule_expression = "rate(30 minutes)"
+    is_enabled = false
+}
+
 resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_targe"{
-    rule = aws_cloudwatch_event_rule.every_five_minutes.name
+    rule = aws_cloudwatch_event_rule.gateway_check_transunion_optout_lambda_target.name
     target_id = "trigger-data-validation-lambda"
     arn = aws_lambda_function.transunion.arn
     # input_path = jsonencode({
