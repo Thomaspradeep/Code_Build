@@ -1,9 +1,9 @@
-resource "aws_cloudwatch_event_rule" "every_five_minutes" {
-    name = "every-five-minutes"
-    description = "Fires every five minutes"
-    schedule_expression = "rate(30 minutes)"
-    is_enabled = false
-}
+# resource "aws_cloudwatch_event_rule" "every_five_minutes" {
+#     name = "every-five-minutes"
+#     description = "Fires every five minutes"
+#     schedule_expression = "rate(30 minutes)"
+#     is_enabled = false
+# }
 
 resource "aws_cloudwatch_event_target" "check_foo_every_five_minutes" {
     rule = aws_cloudwatch_event_rule.every_five_minutes.name
@@ -20,12 +20,12 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_check_foo" {
 }
 
 
-resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
-    name = "dlx-ddm-gateway-check"
-    description = "Fires every five minutes"
-    schedule_expression = "rate(30 minutes)"
-    is_enabled = false
-}
+# resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
+#     name = "dlx-ddm-gateway-check"
+#     description = "Fires every five minutes"
+#     schedule_expression = "rate(30 minutes)"
+#     is_enabled = false
+# }
 
 resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_targe"{
     rule = aws_cloudwatch_event_rule.gateway_check_transunion_optout_lambda_target.name
