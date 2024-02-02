@@ -20,28 +20,28 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_check_foo" {
 }
 
 
-resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
-    name = "dlx-ddm-gateway-check"
-    description = "Fires every five minutes"
-    schedule_expression = "rate(30 minutes)"
-    is_enabled = false
-}
+# resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
+#     name = "dlx-ddm-gateway-check"
+#     description = "Fires every five minutes"
+#     schedule_expression = "rate(30 minutes)"
+#     is_enabled = false
+# }
 
-resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_targe"{
-    rule = aws_cloudwatch_event_rule.gateway_check_transunion_optout_lambda_target.name
-    target_id = "trigger-data-validation-lambda"
-    arn = aws_lambda_function.transunion.arn
-    # input_path = jsonencode({
-    #     "parameters":{
-    #         "sns_topic": ["test"],
-    #         "entity": "transunion",
-    #         "asset": "optout"
-    #     },
-    #     "bucket": {
-    #         "name": ["matthews-bucket-91423"]
-    #     },
-    #     "key": [{
-    #         "prefix": "consume/experian/prescreen/"
-    #     }]
-    # })
-}
+# resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_targe"{
+#     rule = aws_cloudwatch_event_rule.gateway_check_transunion_optout_lambda_target.name
+#     target_id = "trigger-data-validation-lambda"
+#     arn = aws_lambda_function.transunion.arn
+#     # input_path = jsonencode({
+#     #     "parameters":{
+#     #         "sns_topic": ["test"],
+#     #         "entity": "transunion",
+#     #         "asset": "optout"
+#     #     },
+#     #     "bucket": {
+#     #         "name": ["matthews-bucket-91423"]
+#     #     },
+#     #     "key": [{
+#     #         "prefix": "consume/experian/prescreen/"
+#     #     }]
+#     # })
+# }
