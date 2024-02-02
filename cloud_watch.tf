@@ -31,17 +31,25 @@ resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_t
     rule = aws_cloudwatch_event_rule.gateway_check_transunion_optout_lambda_target.name
     target_id = "trigger-data-validation-lambda"
     arn = aws_lambda_function.transunion.arn
-    # input_path = jsonencode({
-    #     "parameters":{
-    #         "sns_topic": ["test"],
-    #         "entity": "transunion",
-    #         "asset": "optout"
-    #     },
-    #     "bucket": {
-    #         "name": ["matthews-bucket-91423"]
-    #     },
-    #     "key": [{
-    #         "prefix": "consume/experian/prescreen/"
-    #     }]
-    # })
+    input = jsonencode(
+        {
+            bucket = {
+                name = [
+                    "matthews-bucket-91423",
+                    ]
+                }
+            key = [
+                {
+                    prefix = "consume/experian/prescreen/"
+                },
+                ]
+            parameters = {
+                asset     = "optout"
+                entity    = "transunion"
+                sns_topic = [
+                    "test",
+                    ]
+                }
+            }
+        )
 }
