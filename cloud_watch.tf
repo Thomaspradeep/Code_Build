@@ -21,7 +21,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_check_foo" {
 
 
 resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
-    name = "every-five-minutes"
+    name = "dlx-ddm-gateway-check"
     description = "Fires every five minutes"
     schedule_expression = "rate(30 minutes)"
     is_enabled = false
