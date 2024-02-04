@@ -37,3 +37,40 @@ resource "aws_s3_bucket_object" "log_bucket"{
 #     bucket_id = aws_s3_bucket.glue_bucket_matthew.id
 #     client_name = each.key
 # }
+resource "aws_s3_bucket" "aws_glue_databucket"{
+    bucket = join("-", ["aws","glue","data","bucket"])
+    versioning{
+        enabled = true
+    }
+    tags = {
+        env = "Glue"
+    }
+    logging {
+        target_bucket = aws_s3_bucket.log_bucket.id
+        target_prefix = "Log/land_bucket"
+    }
+}
+resource "aws_s3_bucket_policy" "aws_glue_data_bucket"{
+    bucket = aws_s3_bucket.aws_glue_databucket.id
+    policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement': [
+        {
+            "Sid": "GlueBucketPolicy"
+            "Principal": "*"
+            "Effect": "Allow"
+            "Action": [
+                "s3:*"
+            ]
+            "Resource":"arn:aws:s3:::matthews-bucket-091423"
+            "Contidion":{
+                "StringEquals"{
+                    "aws:PrincipalArn": "arn:aws:iam::941598205732:user/1685163"
+                }
+            }
+        }
+    ]
+}
+EOF
+}
