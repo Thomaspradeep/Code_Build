@@ -55,7 +55,7 @@ resource "aws_s3_bucket_policy" "aws_glue_data_bucket"{
     policy = <<EOF
 {
     "Version": "2012-10-17",
-    "Statement': [
+    "Statement": [
         {
             "Sid": "GlueBucketPolicy",
             "Principal": "*",
@@ -64,8 +64,8 @@ resource "aws_s3_bucket_policy" "aws_glue_data_bucket"{
                 "s3:*"
             ],
             "Resource":"arn:aws:s3:::matthews-bucket-091423",
-            "Contidion":{
-                "StringEquals"{
+            "Condition":{
+                "StringEquals":{
                     "aws:PrincipalArn": "arn:aws:iam::941598205732:user/1685163"
                 }
             }
