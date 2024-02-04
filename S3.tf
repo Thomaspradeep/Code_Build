@@ -57,9 +57,9 @@ resource "aws_s3_bucket_policy" "aws_glue_data_bucket"{
     "Version": "2012-10-17",
     "Statement': [
         {
-            "Sid": "GlueBucketPolicy"
-            "Principal": "*"
-            "Effect": "Allow"
+            "Sid": "GlueBucketPolicy",
+            "Principal": "*",
+            "Effect": "Allow",
             "Action": [
                 "s3:*"
             ],
