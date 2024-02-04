@@ -62,8 +62,8 @@ resource "aws_s3_bucket_policy" "aws_glue_data_bucket"{
             "Effect": "Allow"
             "Action": [
                 "s3:*"
-            ]
-            "Resource":"arn:aws:s3:::matthews-bucket-091423"
+            ],
+            "Resource":"arn:aws:s3:::matthews-bucket-091423",
             "Contidion":{
                 "StringEquals"{
                     "aws:PrincipalArn": "arn:aws:iam::941598205732:user/1685163"
