@@ -36,7 +36,7 @@ resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_tar
       "key": [{
         "prefix": "consumer/transunion/optout/"
       }],
-      "key"[
+      "key": [
       {
         "suffix": ".txt"
         }]
