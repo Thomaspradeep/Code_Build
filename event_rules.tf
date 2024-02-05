@@ -1,3 +1,4 @@
+# created this d3 testing
 # resource "aws_cloudwatch_event_rule" "glue_job_error" {
 #     name = "Glue_Error"
 #     description = "Collect Glue error messages in CloudWatch"
