@@ -24,26 +24,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_check_foo" {
 resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_target" {
     name = "dlx-ddm-gateway-check"
     description = "Fires every five minutes"
-    event_pattern = <<EOF
-{
-  "source": ["aws.s3"],
-  "detail-type": ["Object Created", "Object Deleted"],
-  "detail": {
-    "bucket": {
-      "name": ["matthews-bucket-091423"]
-    },
-    "object": {
-      "key": [{
-        "prefix": "consumer/transunion/optout/"
-      }],
-      "key": [
-      {
-        "suffix": ".txt"
-        }]
-    }
-  }
-}
-EOF
+    schedule_expression = "rate(30 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_targe"{
