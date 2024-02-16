@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "ec2accesstestpolicy" {
+resource "aws_iam_policy" "ec2accesstestpolicy1" {
   name = "Ec2_access_testpolicy"
   path = "/"
   policy = <<EOF
