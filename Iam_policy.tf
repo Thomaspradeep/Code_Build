@@ -23,8 +23,8 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
                 "s3:List*"
                 ],
 			"Resource": [
-                "arn:aws:s3:::matthews-bucket-91423",
-                "arn:aws:s3:::matthews-bucket-91423/*"
+                "arn:aws:s3:::createtestbucket-16",
+                "arn:aws:s3:::createtestbucket-16/*"
                 ]
 		},
     {
