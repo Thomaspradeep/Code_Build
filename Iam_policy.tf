@@ -72,6 +72,7 @@ resource "aws_iam_policy" "ec2accesstestpolicyVicky" {
                 "arn:aws:s3:::createtestbucket-16/*"
                 ]
 		}
+    ] 
 }
 EOF
 }
