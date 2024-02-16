@@ -23,8 +23,8 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
                 "s3:List*"
                 ],
 			"Resource": [
-                "arn:aws:s3:::createtestbucket-16",
-                "arn:aws:s3:::createtestbucket-16/*"
+                "arn:aws:s3:::matthews-bucket-91423",
+                "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
 		},
     {
@@ -39,6 +39,39 @@ resource "aws_iam_policy" "ec2accesstestpolicy" {
       }
     }
 	]
+}
+EOF
+}
+
+resource "aws_iam_policy" "ec2accesstestpolicyVicky" {
+  name = "Ec2_access_testpolicy_Vicky"
+  path = "/"
+  policy = <<EOF
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Allows3BucketAccess",
+			"Effect": "Allow",
+			"Action": [
+                "s3:ListAllMyBuckets"
+                ],
+			"Resource": "*"
+		},
+    {
+			"Sid": "AllowBucketaccess",
+			"Effect": "Allow",
+			"Action": [
+                "s3:PutObject*",
+                "s3:GetObject*",
+                "s3:DeleteObject*",
+                "s3:List*"
+                ],
+			"Resource": [
+                "aarn:aws:s3:::createtestbucket-16",
+                "arn:aws:s3:::createtestbucket-16/*"
+                ]
+		}
 }
 EOF
 }
