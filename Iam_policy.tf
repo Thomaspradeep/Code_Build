@@ -68,10 +68,22 @@ resource "aws_iam_policy" "ec2accesstestpolicyVicky" {
                 "s3:List*"
                 ],
 			"Resource": [
-                "aarn:aws:s3:::createtestbucket-16",
-                "arn:aws:s3:::createtestbucket-16/*"
+                "aarn:aws:s3:::matthews-bucket-91423",
+                "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
-		}
+		},
+    {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::createtestbucket",
+                "arn:aws:s3:::createtestbucket/*"
+            ]
+    }
     ] 
 }
 EOF
