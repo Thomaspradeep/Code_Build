@@ -68,7 +68,7 @@ resource "aws_iam_policy" "ec2accesstestpolicyVicky" {
                 "s3:List*"
                 ],
 			"Resource": [
-                "aarn:aws:s3:::matthews-bucket-91423",
+                "arn:aws:s3:::matthews-bucket-91423",
                 "arn:aws:s3:::matthews-bucket-91423/*"
                 ]
 		},
