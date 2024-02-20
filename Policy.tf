@@ -6,7 +6,8 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
 {
     "Version": "2012-10-17",
     "Statement": [
-        {   "Sid": "ABACClientEncryptionKeyAccess",
+        {
+            "Sid": "ABACClientEncryptionKeyAccess",
             "Effect": "Allow",
             "Action": [
                 "kms:Decrypt",
@@ -80,6 +81,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "data_gateway_vendor_bucket/*"
             ]
         },
+
         {
             "Sid": "AllowDataAnalystBucketAccess",
             "Effect": "Allow",
@@ -92,6 +94,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "nxgen_airflow_bucket/dags/*"
             ]
         },
+
         {
             "Sid": "AllowListAccess",
             "Effect": "Allow",
@@ -114,6 +117,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "s3_athena_results_bucket/*"                
             ]
         },
+
         {
             "Sid": "AllowGlueBucketAccess",
             "Effect": "Allow",
@@ -342,7 +346,9 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             "Action": "iam:ListRoles",
             "Resource": [
                 "arn:aws:iam::${var.aws_account}:role/AWSGlueServiceRole_${var.environment}_tf_secrets",
-                "arn:aws:iam::${var.aws_account}:role/AWSLambdaGlueRole_${var.environment}_secrets" 
+                "arn:aws:iam::${var.aws_account}:role/AWSLambdaGlueRole_${var.environment}_secrets"
+                ]
+        }
     ]
 }
 EOF
