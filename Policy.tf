@@ -54,7 +54,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             "Effect": "Deny",
             "Action": "s3:*",
             "Resource": [
-                "${aws_s3_bucket.client_consume_bucket.arn}",
+                "${aws_s3_bucket.log_bucket.arn}",
                 "${aws_s3_bucket.client_process_bucket.arn}",
                 "${aws_s3_bucket.client_land_bucket.arn}",
                 "${aws_s3_bucket.data_gateway_client_bucket.arn}"
@@ -169,7 +169,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "s3:GetBucketVersioning"
             ],
             "Resource": [
-                "${aws_s3_bucket.client_consume_bucket.arn}"
+                "${aws_s3_bucket.log_bucket.arn}"
             ],
             "Condition": {
                 "StringLike": {
@@ -190,7 +190,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             ],
             "Effect": "Allow",
             "Resource": [
-                "${aws_s3_bucket.client_consume_bucket.arn}/$${aws:PrincipalTag/ClientName}/*"
+                "${aws_s3_bucket.log_bucket.arn}/$${aws:PrincipalTag/ClientName}/*"
             ],
             "Condition": {
                 "StringLike": {
@@ -209,7 +209,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "s3:ListBucket"
             ],
             "Resource": [
-                "${aws_s3_bucket.client_consume_bucket.arn}/$${aws:PrincipalTag/ClientName}/*"
+                "${aws_s3_bucket.log_bucket.arn}/$${aws:PrincipalTag/ClientName}/*"
             ]
         },
         {
@@ -233,7 +233,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             ],
             "Effect": "Allow",
             "Resource": [
-                "${aws_s3_bucket.client_consume_bucket.arn}"
+                "${aws_s3_bucket.log_bucket.arn}"
             ],
             "Condition": {
                 "StringEquals": {
