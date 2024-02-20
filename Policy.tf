@@ -1,8 +1,8 @@
-resource "aws_iam_policy" "business_analyst_basic_user_policy" {
+resource "aws_iam_policy" "business_analyst_basic_user_policy"{
   name        = "DDM_Custom_Business_Analyst"
   description = "A basic business analyst access user"
   path        = "/"
-  policy      = <<EOF
+  policy = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
