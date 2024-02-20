@@ -302,7 +302,62 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "arn:aws:iam::${var.aws_account}:role/AWSGlueServiceRole_${var.environment}_tf_secrets",
                 "arn:aws:iam::${var.aws_account}:role/AWSLambdaGlueRole_${var.environment}_secrets"
             ]
-        }
+        },
+        {
+            "Sid": "DenyGlueStartStop",
+            "Effect": "Deny",
+            "Action": [
+                "glue:StartJobRun",
+                "glue:StopTrigger",
+                "glue:BatchStopJobRun",
+                "glue:StartTrigger"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ForAnyValue:StringNotEquals": {
+                    "aws:ResourceTag/Team": [
+                        "Business Analysts",
+                        "Data Engineering"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyGlueCreateDelete",
+            "Effect": "Deny",
+            "Action": [
+                "glue:UpdateTrigger",
+                "glue:UpdateJob",
+                "glue:DeleteTrigger",
+                "glue:DeleteJob"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:ResourceTag/Team": "Business Analysts"
+                }
+            }
+        },
+        {
+            "Sid": "DenyIAMSecretsManagerAssume",
+            "Effect": "Deny",
+            "Action": [
+                "iam:GetRole",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:PassRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::${var.aws_account}:role/AWSGlueServiceRole_${var.environment}_tf_secrets",
+                "arn:aws:iam::${var.aws_account}:role/AWSLambdaGlueRole_${var.environment}_secrets"
+            ]
+        },
+        {
+            "Sid": "DenyIAMSecretsManagerAssumeList",
+            "Effect": "Deny",
+            "Action": "iam:ListRoles",
+            "Resource": [
+                "arn:aws:iam::${var.aws_account}:role/AWSGlueServiceRole_${var.environment}_tf_secrets",
+                "arn:aws:iam::${var.aws_account}:role/AWSLambdaGlueRole_${var.environment}_secrets" 
     ]
 }
 EOF
