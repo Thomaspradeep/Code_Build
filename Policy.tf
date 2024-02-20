@@ -22,21 +22,6 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 }
             }
         },
-        {   "Sid": "S3ServiceEncryptionKeyAccess",
-            "Effect": "Allow",
-            "Action": [
-                "kms:Decrypt",
-                "kms:Encrypt",
-                "kms:DescribeKey",
-                "kms:ReEncrypt*",
-                "kms:GenerateDataKey*"
-            ],
-            "Resource": [
-                "${module.d3_services["s3"].primary_arn}",
-                "${module.d3_services["athena"].primary_arn}",
-                "${var.athena_key_arn}"
-            ]
-        },
         {
             "Sid": "AllowEventBridgeAccess",
             "Effect": "Allow",
