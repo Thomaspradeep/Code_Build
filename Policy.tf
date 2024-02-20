@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "business_analyst_basic_user_policy"{
+resource "aws_iam_policy" "thomasbusinesspolicy"{
   name        = "DDM_Custom_Business_Analyst"
   description = "A basic business analyst access user"
   path        = "/"
