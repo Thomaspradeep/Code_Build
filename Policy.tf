@@ -54,10 +54,10 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             "Effect": "Deny",
             "Action": "s3:*",
             "Resource": [
-                "${aws_s3_bucket.log_bucket.arn}",
-                "${aws_s3_bucket.client_process_bucket.arn}",
-                "${aws_s3_bucket.client_land_bucket.arn}",
-                "${aws_s3_bucket.data_gateway_client_bucket.arn}"
+                "log_bucket",
+                "client_process_bucket",
+                "client_land_bucket",
+                "data_gateway_client_bucket"
             ],
                 "Condition": {
                     "StringLike": {
@@ -75,24 +75,24 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "S3:GetObject"
             ],
             "Resource": [
-                "${aws_s3_bucket.consume_bucket.arn}",
-                "${aws_s3_bucket.process_bucket.arn}",
-                "${aws_s3_bucket.land_bucket.arn}",
-                "${aws_s3_bucket.s3_consume_bucket.arn}",
-                "${aws_s3_bucket.s3_process_bucket.arn}",
-                "${aws_s3_bucket.s3_land_bucket.arn}",
-                "${aws_s3_bucket.first_american_vendor.arn}",
-                "${aws_s3_bucket.data_gateway_bucket.arn}",
-                "${aws_s3_bucket.data_gateway_vendor_bucket.arn}",
-                "${aws_s3_bucket.consume_bucket.arn}/*",
-                "${aws_s3_bucket.process_bucket.arn}/*",
-                "${aws_s3_bucket.land_bucket.arn}/*",
-                "${aws_s3_bucket.s3_consume_bucket.arn}/*",
-                "${aws_s3_bucket.s3_process_bucket.arn}/*",
-                "${aws_s3_bucket.s3_land_bucket.arn}/*",
-                "${aws_s3_bucket.first_american_vendor.arn}/*",
-                "${aws_s3_bucket.data_gateway_bucket.arn}/*",
-                "${aws_s3_bucket.data_gateway_vendor_bucket.arn}/*"
+                "consume_bucket",
+                "process_bucket",
+                "land_bucket",
+                "s3_consume_bucket",
+                "s3_process_bucket",
+                "s3_land_bucket",
+                "first_american_vendor",
+                "data_gateway_bucket",
+                "data_gateway_vendor_bucket",
+                "consume_bucket/*",
+                "process_bucket/*",
+                "land_bucket/*",
+                "s3_consume_bucket/*",
+                "s3_process_bucket/*",
+                "s3_land_bucket/*",
+                "first_american_vendor/*",
+                "data_gateway_bucket/*",
+                "data_gateway_vendor_bucket/*"
             ]
         },
         {
@@ -100,11 +100,11 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             "Effect": "Allow",
             "Action": "s3:*",
             "Resource": [
-                "${aws_s3_bucket.data_analyst_bucket.arn}",
-                "${aws_s3_bucket.data_analyst_bucket.arn}/*",
-                "${aws_s3_bucket.entity_config_bucket.arn}",
-                "${aws_s3_bucket.entity_config_bucket.arn}/*",
-                "${aws_s3_bucket.nxgen_airflow_bucket.arn}/dags/*"
+                "data_analyst_bucket",
+                "data_analyst_bucket/*",
+                "entity_config_bucket",
+                "entity_config_bucket/*",
+                "nxgen_airflow_bucket/dags/*"
             ]
         },
         {
@@ -112,7 +112,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
             "Effect": "Allow",
             "Action": "s3:List*",
             "Resource": [
-                "${aws_s3_bucket.nxgen_airflow_bucket.arn}"
+                "nxgen_airflow_bucket"
             ]
         },
         {
@@ -123,10 +123,10 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "S3:GetObject"
             ],
             "Resource": [                
-                "${aws_s3_bucket.athena_results_bucket.arn}",          
-                "${aws_s3_bucket.s3_athena_results_bucket.arn}",            
-                "${aws_s3_bucket.athena_results_bucket.arn}/*",
-                "${aws_s3_bucket.s3_athena_results_bucket.arn}/*"                
+                "athena_results_bucket",          
+                "s3_athena_results_bucket",            
+                "athena_results_bucket/*",
+                "s3_athena_results_bucket/*"                
             ]
         },
         {
@@ -169,7 +169,7 @@ resource "aws_iam_policy" "business_analyst_basic_user_policy" {
                 "s3:GetBucketVersioning"
             ],
             "Resource": [
-                "${aws_s3_bucket.log_bucket.arn}"
+                "log_bucket"
             ],
             "Condition": {
                 "StringLike": {
