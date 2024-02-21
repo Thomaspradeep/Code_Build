@@ -89,3 +89,28 @@ resource "aws_iam_policy" "ec2accesstestpolicyVicky" {
 }
 EOF
 }
+
+resource "aws_iam_policy" "EventBridge"{
+    name = "Test-EventBridge-Policy"
+    description = "Creation this policy for testing purpose"
+    path = "/"
+    policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EventBridge",
+            "Effects": "Allow",
+            "Action": [
+                "events:DescribleRule",
+                "events:DisableRule",
+                "events:PutRule",
+                "events:List*",
+                "events:EnableRule"
+            ],
+            "Resource":"*"
+        }
+    ]
+}
+EOF
+}
