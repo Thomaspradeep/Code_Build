@@ -100,7 +100,7 @@ resource "aws_iam_policy" "EventBridge"{
     "Statement": [
         {
             "Sid": "EventBridge",
-            "Effects": "Allow",
+            "Effect": "Allow",
             "Action": [
                 "events:DescribleRule",
                 "events:DisableRule",
