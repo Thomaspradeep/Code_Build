@@ -102,7 +102,7 @@ resource "aws_iam_policy" "EventBridge"{
             "Sid": "EventBridge",
             "Effect": "Allow",
             "Action": [
-                "events:DescribleRule",
+                "events:DescribeRule",
                 "events:DisableRule",
                 "events:PutRule",
                 "events:List*",
