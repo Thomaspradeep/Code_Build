@@ -150,7 +150,9 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
       "Resource": "*",
       "Condition": {
         "StringNotEquals": {
-          "secretsmanager:ResourceTag/Team": "Business Analyst"
+          "secretsmanager:ResourceTag/Team": [
+            "Business Analyst"
+          ]
         }
       }
     },
