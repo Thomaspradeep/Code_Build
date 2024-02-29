@@ -25,3 +25,6 @@ variable "clients_list"{
 variable "lambda_role"{
     type = string
 }
+variable "client_name"{
+    type = string
+}

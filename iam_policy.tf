@@ -191,8 +191,12 @@ resource "aws_iam_policy" "Userbasedpolicy"{
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:ResourceTag/Team": "Business Analyst",
-          "aws:ResourceTag/Entity": "tom"
+          "aws.ResourceTag/Entity": [
+            "${var.client_name}"
+          ],
+          "aws:ResourceTag/Team": [
+            "Business Analyst"
+          ]
         }
       }
     }
