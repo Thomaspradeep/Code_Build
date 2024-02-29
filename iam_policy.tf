@@ -116,7 +116,7 @@ EOF
 }
 
 resource "aws_iam_policy" "Seceretmanagerpolicy"{
-  name = "hdfcbankpolicy"
+  name = "BusinessAnalystPolicy"
   description = "created for HDFC bank secretmanager policy"
   path = "/"
   policy = <<EOF
