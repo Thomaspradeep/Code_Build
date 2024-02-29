@@ -133,7 +133,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
         "secretmanager:PutSecretValue",
         "secretmanager:DeleteSecret",
         "secretmanager:CancelRotateSecret",
-        "secretmanager:List*",
+        "secretmanager:ListSecretVersionIds",
         "secretmanager:UpdateSecret",
         "secretmanager:GetRandomPassword",
         "secretmanager:GetResourcePolicy",
@@ -153,6 +153,14 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
           "secretsmanager:ResourceTag/Team": "Business Analyst"
         }
       }
+    },
+    {
+      "Sid": "Allow Secret manager Access",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:List*"
+      ],
+      "Resource": "*"
     }
   ]
 }
