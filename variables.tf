@@ -26,5 +26,5 @@ variable "lambda_role"{
     type = string
 }
 variable "client_name"{
-    type = string
+    type = map(any)
 }
