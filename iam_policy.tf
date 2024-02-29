@@ -128,7 +128,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
       "Effect": "Allow"
       "Action": [
         "secretmanager:UntagResoruce",
-        "secretmanager:DescribeSecret"
+        "secretmanager:DescribeSecret",
         "secretmanager:DeleteResourcePolicy",
         "secretmanager:PutSecretValue",
         "secretmanager:DeleteSecret",
