@@ -125,7 +125,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
   "Statement": [
     {
       "Sid": "AllowSecretsManagerActions",
-      "Effect": "Deny",
+      "Effect": "Allow",
       "Action": [
         "secretsmanager:UntagResoruce",
         "secretsmanager:DescribeSecret",
@@ -149,7 +149,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
       ],
       "Resource": "*",
       "Condition": {
-        "StringNotEquals": {
+        "StringEquals": {
           "secretsmanager:ResourceTag/Team": "Business Analyst"
         }
       }
