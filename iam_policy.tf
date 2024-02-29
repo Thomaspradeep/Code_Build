@@ -166,3 +166,36 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
 }
 EOF
 }
+
+resource "aws_iam_policy" "Userbasedpolicy"{
+  name = "client1"
+  description = "creating for particular user"
+  path = "/"
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ClientSecretmanagerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretmanager:DescribeSecret",
+        "secretmanager:Get*",
+        "secretmanager:PutSecretValue",
+        "secretmanager:CreateSecret",
+        "secretmanager:RestoreSecret",
+        "secretmanager:TagResource",
+        "secretmanager:UpdateSecret"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Team": "Business Analyst",
+          "aws:ResourceTag/Entity": "tom"
+        }
+      }
+    }
+  ]
+}
+EOF
+}
