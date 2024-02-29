@@ -114,3 +114,47 @@ resource "aws_iam_policy" "EventBridge"{
 }
 EOF
 }
+
+resource "aws_iam_policy" "Seceretmanagerpolicy"{
+  name = "hdfcbankpolicy"
+  description = "created for HDFC bank secretmanager policy"
+  path = "/"
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSecretsManagerActions",
+      "Effect": "Allow"
+      "Action": [
+        "secretmanager:UntagResoruce",
+        "secretmanager:DescribeSecret"
+        "secretmanager:DeleteResourcePolicy",
+        "secretmanager:PutSecretValue",
+        "secretmanager:DeleteSecret",
+        "secretmanager:CancelRotateSecret",
+        "secretmanager:ListSecretVersionIds",
+        "secretmanager:UpdateSecret",
+        "secretmanager:GetRandomPassword",
+        "secretmanager:GetResourcePolicy",
+        "secretmanager:GetSecretValue",
+        "secretmanager:StopReplicationToReplica",
+        "secretmanager:PutResourcePolicy",
+        "secretmanager:ReplicateSecretToRegions",
+        "secretmanager:RestoreSecret",
+        "secretmanager:UpdateSecretVersionStage",
+        "secretmanager:RotateSecret",
+        "secretmanager:ValidateResourcePolicy",
+        "secretmanager:RemoveRegionsFromReplication"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/Team": "Business Analyst"
+        }
+      }
+    }
+  ]
+}
+EOF
+}
