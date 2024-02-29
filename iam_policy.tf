@@ -125,7 +125,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
   "Statement": [
     {
       "Sid": "AllowSecretsManagerActions",
-      "Effect": "Allow"
+      "Effect": "Allow",
       "Action": [
         "secretmanager:UntagResoruce",
         "secretmanager:DescribeSecret",
