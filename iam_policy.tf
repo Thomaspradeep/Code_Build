@@ -180,13 +180,13 @@ resource "aws_iam_policy" "Userbasedpolicy"{
       "Sid": "ClientSecretmanagerAccess",
       "Effect": "Allow",
       "Action": [
-        "secretmanager:DescribeSecret",
-        "secretmanager:Get*",
-        "secretmanager:PutSecretValue",
-        "secretmanager:CreateSecret",
-        "secretmanager:RestoreSecret",
-        "secretmanager:TagResource",
-        "secretmanager:UpdateSecret"
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:Get*",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:RestoreSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:UpdateSecret"
       ],
       "Resource": "*",
       "Condition": {
