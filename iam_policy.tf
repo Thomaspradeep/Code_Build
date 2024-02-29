@@ -133,7 +133,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
         "secretmanager:PutSecretValue",
         "secretmanager:DeleteSecret",
         "secretmanager:CancelRotateSecret",
-        "secretmanager:ListSecretVersionIds",
+        "secretmanager:List*",
         "secretmanager:UpdateSecret",
         "secretmanager:GetRandomPassword",
         "secretmanager:GetResourcePolicy",
