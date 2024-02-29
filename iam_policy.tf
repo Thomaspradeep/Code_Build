@@ -155,7 +155,7 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
       }
     },
     {
-      "Sid": "Allow Secret manager Access",
+      "Sid": "AllowSecretmanagerListAccess",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:List*"
