@@ -8,7 +8,7 @@ resource "aws_iam_policy" "Userbasedpolicy"{
   "Statement": [
     {
       "Sid": "ClientSecretmanagerAccess",
-      "Effect": "Allow",
+      "Effect": "Deny",
       "Action": [
         "secretsmanager:DescribeSecret",
         "secretsmanager:Get*",
@@ -20,7 +20,7 @@ resource "aws_iam_policy" "Userbasedpolicy"{
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
+        "StringNotEquals": {
           "secretsmanager:ResourceTag/Entity": [
             "${var.client_name}"
           ],
