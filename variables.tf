@@ -1,3 +1,6 @@
+variable aws_account{
+    type = string
+}
 variable "aws_region" {
     type = string
     default = "ap-south-1"
@@ -10,9 +13,18 @@ variable "bucket_name" {
     description = "Creating bucket on 14/09/2023 for learning purpose"
 }
 
-#for testing adding this command
+variable "environment" {
+    type = string
+    default = "preprod" 
+}
 
-variable "credit_clients_list" {
+variable "clients_list"{
     type = map(any)
 }
 
+variable "lambda_role"{
+    type = string
+}
+variable "client_name"{
+    type = map(any)
+}
