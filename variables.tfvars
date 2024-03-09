@@ -6,3 +6,7 @@ clients_list = {
     object1 = "object1",
     object2 = "object2"
 }
+client_name = {
+    ktkbank = "object1",
+    cnrb = "object2"
+}
