@@ -28,3 +28,6 @@ variable "lambda_role"{
 variable "client_name"{
     type = map(any)
 }
+variable "deeran" {
+    type = string
+}
