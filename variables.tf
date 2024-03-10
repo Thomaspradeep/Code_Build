@@ -18,7 +18,7 @@ variable "environment" {
     default = "preprod" 
 }
 
-variable "clients_list"{
+variable "my_clients"{
     type = map(any)
 }
 
