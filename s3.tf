@@ -37,7 +37,15 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
         Env = "Dev"
     }
 }
-
+resource "aws_s3_bucket" "deeran_bucket" {
+    bucket = var.deeran
+   versioning{
+    enabled = true
+   }
+    tags = {
+        Env = "Dev"
+    }
+}
 module "glue_bucket_matthew"{
      for_each = var.my_clients
      source = "./modules/client_bucket_directories"
