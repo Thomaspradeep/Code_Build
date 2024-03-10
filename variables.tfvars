@@ -11,3 +11,4 @@ client_name = {
     ktkbank = "object1",
     cnrb = "object2"
 }
+deeran = "deeran-bucket-10"
