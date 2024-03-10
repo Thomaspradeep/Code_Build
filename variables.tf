@@ -30,4 +30,5 @@ variable "client_name"{
 }
 variable "deeran" {
     type = string
+    default = "deeran-bucket-10"
 }
