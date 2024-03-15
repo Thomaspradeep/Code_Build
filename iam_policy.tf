@@ -214,6 +214,12 @@ resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
         "secretsmanager:BatchGetSecretValue"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "KMSfullaccess",
+      "Effect": "Allow",
+      "Action": "kms:*",
+      "Resource": "*"
     }
   ]
 }
