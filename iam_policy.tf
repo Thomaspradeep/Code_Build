@@ -202,7 +202,7 @@ resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
           "secretsmanager:ResourceTag/Team": "Business Analyst"
         },
         "Null": {
-          "secretsmanager:ResourceTag/Entity": "true
+          "secretsmanager:ResourceTag/Entity": "true"
         }
       }
     },
