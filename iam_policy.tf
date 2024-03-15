@@ -175,3 +175,47 @@ module "clientbasedpolicy"{
   for_each = var.client_name
   client_name = each.key
 }
+
+resource "aws_iam_policy" "Seceretmanagerpolicy"{
+  name = "BA_secretsmanager_policy"
+  description = "created for HDFC bank secretmanager policy"
+  path = "/"
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSecretsManagerActions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:RestoreSecret",
+        "secretsmanager:Get*",
+        "secretsmanager:TagResource",
+        "secretsmanager:CreateSecret"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/Team": "Business Analyst"
+        },
+        "Null": {
+          "secretsmanager:ResourceTag/Entity": "true
+        }
+      }
+    },
+    {
+      "Sid": "AllowSecretmanagerListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:List*",
+        "secretsmanager:BatchGetSecretValue"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
