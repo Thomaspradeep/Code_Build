@@ -176,7 +176,7 @@ module "clientbasedpolicy"{
   client_name = each.key
 }
 
-resource "aws_iam_policy" "Seceretmanagerpolicy"{
+resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
   name = "BA_secretsmanager_policy"
   description = "created for HDFC bank secretmanager policy"
   path = "/"
