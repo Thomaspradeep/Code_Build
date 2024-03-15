@@ -29,6 +29,15 @@ resource "aws_iam_policy" "Userbasedpolicy"{
           ]
         }
       }
+    },
+    {
+      "Sid": "AllowSecretmanagerListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:List*",
+        "secretsmanager:BatchGetSecretValue"
+      ],
+      "Resource": "*"
     }
   ]
 }
