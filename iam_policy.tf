@@ -219,3 +219,24 @@ resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
 }
 EOF
 }
+
+resource "aws_iam_policy" "User_Assume_Role"{
+  name = "User_Switch_Role"
+  description = "User Switch role access"
+  path = "/"
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": [
+          "arn:aws:iam::941598205732:role/Business_analyst_role",
+          "arn:aws:iam::941598205732:role/Basic_BA_Role"
+      ]
+    }
+  ]
+}
+EOF
+}
