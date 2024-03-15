@@ -233,7 +233,7 @@ resource "aws_iam_policy" "User_Assume_Role"{
       "Action": "sts:AssumeRole",
       "Resource": [
           "arn:aws:iam::941598205732:role/Business_analyst_role",
-          "arn:aws:iam::941598205732:role/Client_Role"
+          "arn:aws:iam::941598205732:role/Ktk_client_role"
       ]
     }
   ]
