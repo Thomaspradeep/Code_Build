@@ -117,7 +117,7 @@ EOF
 
 resource "aws_iam_policy" "Seceretmanagerpolicy"{
   name = "BusinessAnalystPolicy"
-  description = "created for HDFC bank secretmanager policy"
+  description = "Version 1 BA General secretmanager policy"
   path = "/"
   policy = <<EOF
 {
@@ -178,7 +178,7 @@ module "clientbasedpolicy"{
 
 resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
   name = "BA_secretsmanager_policy"
-  description = "created for HDFC bank secretmanager policy"
+  description = "Version 2 BA general secretmanager policy"
   path = "/"
   policy = <<EOF
 {
