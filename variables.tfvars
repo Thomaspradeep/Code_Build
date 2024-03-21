@@ -5,7 +5,8 @@ lambda_role = "arn:aws:iam::941598205732:role/lambda_test_role"
 my_clients = {
     deeran = "object1",
     somesh = "object2",
-    thomas = "object3"
+    thomas = "object3",
+    pradeep = "object4"
 }
 client_name = {
     ktkbank = "object1",
