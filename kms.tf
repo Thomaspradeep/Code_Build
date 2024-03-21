@@ -4,7 +4,7 @@ resource "aws_kms_key" "demo" {
 }
 
 resource "aws_kms_alias" "demo" {
-  name          = "alias/demo"
+  name          = "alias/demo1"
   target_key_id = aws_kms_key.demo.key_id
 }
 
