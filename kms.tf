@@ -1,4 +1,4 @@
-resource "aws_kms_key" ""demo {
+resource "aws_kms_key" "demo" {
   description            = "KMS key 1"
   deletion_window_in_days = 10
 }
