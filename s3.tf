@@ -28,15 +28,15 @@ resource "aws_s3_bucket_object" "log_bucket"{
     key = "Log/land_bucket"
 }
 
-# resource "aws_s3_bucket" "glue_bucket_matthew" {
-#     bucket = "glue-bucket-matthew01"
-#    versioning{
-#     enabled = true
-#    }
-#     tags = {
-#         Env = "Dev"
-#     }
-# }
+resource "aws_s3_bucket" "glue_bucket_matthew" {
+    bucket = "glue-bucket-matthew01"
+    versioning{
+        enabled = true
+    }
+     tags = {
+         Env = "Dev"
+     }
+ }
 # resource "aws_s3_bucket" "aws_glue_databucket"{
 #     bucket = join("-", ["aws","glue","data","bucket"])
 #     versioning{
