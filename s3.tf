@@ -37,6 +37,13 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
          Env = "Dev"
      }
  }
+module "glue_bucket_matthew"{
+     for_each = var.my_clients
+     source = "./modules/client_bucket_directories"
+    
+     bucket_id = aws_s3_bucket.glue_bucket_matthew.id
+     client_name = each.key
+ }
 # resource "aws_s3_bucket" "aws_glue_databucket"{
 #     bucket = join("-", ["aws","glue","data","bucket"])
 #     versioning{
