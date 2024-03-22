@@ -38,8 +38,8 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
      }
  }
 
-resource "aws_s3_bucket" "crawlermatsoup" {
-    bucket = "crawlermatsoup2022101"
+resource "aws_s3_bucket" "matthews_bucket_91423" {
+    bucket = "matthews-bucket-91423"
     versioning{
         enabled = true
     }
