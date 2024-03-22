@@ -38,6 +38,16 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
      }
  }
 
+resource "aws_s3_bucket" "crawlermatsoup" {
+    bucket = "crawlermatsoup2022101"
+    versioning{
+        enabled = true
+    }
+     tags = {
+         Env = "Terraform"
+     }
+ }
+
  # Objects Modules
 module "glue_bucket_matthew"{
      for_each = var.clients_list
@@ -46,6 +56,8 @@ module "glue_bucket_matthew"{
      bucket_id = aws_s3_bucket.glue_bucket_matthew.id
      client_name = each.key
  }
+
+ 
 
  
 # resource "aws_s3_bucket" "aws_glue_databucket"{
