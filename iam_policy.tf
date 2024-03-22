@@ -170,11 +170,6 @@ resource "aws_iam_policy" "Seceretmanagerpolicy"{
 EOF
 }
 
-module "clientbasedpolicy"{
-  source = "./modules/glue_table"
-  for_each = var.clients_list
-  client_name = each.key
-}
 
 resource "aws_iam_policy" "ba_Seceretmanagerpolicy"{
   name = "BA_secretsmanager_policy"

@@ -22,3 +22,10 @@ resource "aws_glue_catalog_database" "glue_credit_process_databases" {
 # resource "aws_glue_catalog_database" "glue_credit_process_databases_test"{
 #     name = "credit_process_test_${var.environment}"  
 # }
+
+module "m3_clients" {
+  source = "./modules/glue_table"
+  for_each = var.clients_list
+  client_name = each.key
+  glue_database_name = aws_glue_catalog_database.glue_credit_process_database.name
+}
