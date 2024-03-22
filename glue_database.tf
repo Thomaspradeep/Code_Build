@@ -23,7 +23,7 @@ resource "aws_glue_catalog_database" "glue_credit_process_databases" {
 #     name = "credit_process_test_${var.environment}"  
 # }
 
-module "m3_clients" {
+module "clientbasedpolicy" {
   source = "./modules/glue_table"
   for_each = var.clients_list
   client_name = each.key
