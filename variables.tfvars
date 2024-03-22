@@ -6,6 +6,6 @@ clients_list = {
     deeran = "client1",
     somesh = "client2"
     thomas = "client3",
-    ktk_bank = "client4"
-    cnr_bank = "client4"
+    ktkbank = "client4"
+    cnrb = "client4"
 }
