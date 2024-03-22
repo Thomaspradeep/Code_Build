@@ -18,17 +18,10 @@ variable "environment" {
     default = "preprod" 
 }
 
-variable "my_clients"{
+variable "clients_list"{
     type = map(any)
 }
 
 variable "lambda_role"{
     type = string
-}
-variable "client_name"{
-    type = map(any)
-}
-variable "deeran" {
-    type = string
-    default = "deeran-bucket-10"
 }

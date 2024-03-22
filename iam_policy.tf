@@ -171,8 +171,8 @@ EOF
 }
 
 module "clientbasedpolicy"{
-  source = "./modules/Client"
-  for_each = var.client_name
+  source = "./modules/glue_table"
+  for_each = var.clients_list
   client_name = each.key
 }
 

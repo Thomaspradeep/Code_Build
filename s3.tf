@@ -38,7 +38,7 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
      }
  }
 module "glue_bucket_matthew"{
-     for_each = var.my_clients
+     for_each = var.clients_list
      source = "./modules/client_bucket_directories"
     
      bucket_id = aws_s3_bucket.glue_bucket_matthew.id
