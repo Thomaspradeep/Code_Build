@@ -1,8 +1,3 @@
-provider "aws" {
-  # You should specify your AWS region here
-  region = "us-east-1"
-} 
-
 resource "aws_ssoadmin_permission_set" "example" {
   name        = "test_set"
   description = "Your Permission Set Description"
