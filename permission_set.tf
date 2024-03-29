@@ -13,7 +13,7 @@ resource "aws_ssoadmin_account_assignment" "example" {
   instance_arn       = aws_ssoadmin_permission_set.example.instance_arn
   permission_set_arn = aws_ssoadmin_permission_set.example.arn
   principal_type     = "USER"
-  principal_id       = "d-90678454f6"
+  principal_id       = "arn:aws:sso:::instance/ssoins-72238b70b2eebf44/16uma151"
   target_type        = "AWS_ACCOUNT"
   target_id          = "058264506178"
 }
