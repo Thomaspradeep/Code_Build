@@ -4,6 +4,7 @@ for_each = var.clients_list
 client_name = each.key
 instance_arn = var.instance_arn
 account_id = var.account_id
+identity_store_id = var.identity_store_id
 
 providers = {
     aws = aws.mgmt

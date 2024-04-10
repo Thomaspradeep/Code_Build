@@ -25,3 +25,9 @@ variable "project-tag"{
     type = string
     default = "M3"
 }
+
+variable "identity_store_id" {}
+variable "instance_arn" {}
+variable "account_id" {
+  
+}
