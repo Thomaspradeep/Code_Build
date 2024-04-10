@@ -1,7 +1,6 @@
-aws_account = "941598205732"
-aws_region = "ap-south-1"
-bucket_name = "matthews-bucket-091423"
-lambda_role = "arn:aws:iam::941598205732:role/lambda_test_role"
+aws_account = "058264506178"
+aws_region = "us-east-1"
+bucket_name = "mar292024"
 clients_list = {
     deeran = "client1",
     somesh = "client2"

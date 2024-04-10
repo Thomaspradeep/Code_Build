@@ -2,17 +2,17 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.24.0"
+      version = "5.34.0"
     }
   }
   backend "s3" {
-    bucket = "matthews-bucket-91423"
+    bucket = "mar292024"
     key    = "dev/terraform.tfstate"
-    region = "ap-south-1"
+    region = "us-east-1"
   }
 }
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
