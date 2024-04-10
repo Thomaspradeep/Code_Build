@@ -15,9 +15,13 @@ variable "bucket_name" {
 
 variable "environment" {
     type = string
-    default = "preprod" 
 }
 
 variable "clients_list"{
     type = map(any)
+}
+
+variable "project-tag"{
+    type = string
+    default = "M3"
 }

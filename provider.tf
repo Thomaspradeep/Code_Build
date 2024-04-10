@@ -15,4 +15,22 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
+  assume_role {
+    role_arn = "arn:aws:iam::${var.aws_account}:role/TerraformAdminRole"
+  }
+  default_tags {
+    tags = {
+      Project = var.project-tag
+      Environment = var.environment
+      Deployment = "Terraform"
+    }
+  }
+}
+
+provider "aws" {
+  alias = "mgmt"
+  region = "us-east-1"
+  assume_role {
+    role_arn = "arn:aws:iam::941598205732:role/Terraformrole"
+  }  
 }
