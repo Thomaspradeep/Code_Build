@@ -35,7 +35,7 @@ resource "aws_iam_policy" "ec2accesstestpolicy1" {
       "Resource": "*",
       "Condition":{
         "StringEquals":{
-          "aws:PrincipalArn": "arn:aws:iam::941598205732:user/1685163"
+          "aws:PrincipalArn": "arn:aws:iam::${var.aws_account}:user/1685163"
         }
       }
     }
@@ -233,8 +233,8 @@ resource "aws_iam_policy" "User_Assume_Role"{
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
       "Resource": [
-          "arn:aws:iam::941598205732:role/Business_analyst_role",
-          "arn:aws:iam::941598205732:role/Ktk_client_role"
+          "arn:aws:iam::${var.aws_account}:role/Business_analyst_role",
+          "arn:aws:iam::${var.aws_account}:role/Ktk_client_role"
       ]
     }
   ]
