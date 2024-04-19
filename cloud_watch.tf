@@ -29,7 +29,7 @@ resource "aws_cloudwatch_event_rule" "gateway_check_transunion_optout_lambda_tar
         "detail-type": ["Object Created", "Object Deleted"],
         "detail": {
             "bucket": {
-                "name": ["matthews-bucket-091423"]
+                "name": ["matthew-bucket-091423"]
                 },
                 "object": {
                     "key": [{

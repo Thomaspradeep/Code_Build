@@ -9,7 +9,7 @@ variable "aws_region" {
 
 variable "bucket_name" {
     type = string
-    default = "matthews-bucket-091423"
+    default = "matthew-bucket-091423"
     description = "Creating bucket on 14/09/2023 for learning purpose"
 }
 
