@@ -38,8 +38,8 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
      }
  }
 
-resource "aws_s3_bucket" "matthews_bucket_91423" {
-    bucket = "matthews-bucket-91423"
+resource "aws_s3_bucket" "matthew_bucket_91423" {
+    bucket = "matthew-bucket-91423"
     versioning{
         enabled = true
     }

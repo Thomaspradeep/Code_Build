@@ -49,7 +49,7 @@ resource "aws_cloudwatch_event_target" "gateway_check_transunion_optout_lambda_t
         {
             bucket = {
                 name = [
-                    "matthews-bucket-91423",
+                    "matthew-bucket-91423",
                     ]
                 }
             key = [
