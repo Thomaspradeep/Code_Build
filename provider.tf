@@ -6,13 +6,13 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "matthews-bucket-91423"
+    bucket = "matthew-bucket-91423"
     key    = "dev/terraform.tfstate"
-    region = "ap-south-1"
+    region = "us-east-1"
   }
 }
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
