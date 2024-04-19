@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
          Env = "Terraform"
      }
      logging{
-        target_bucket = data.aws_s3_bucket.matthew_bucket_main
+        target_bucket = data.aws_s3_bucket.matthew_bucket_main.bucket
         target_prefix = "Logs/"
     }
  }
@@ -53,20 +53,3 @@ resource "aws_s3_bucket_policy" "glue_bucket_matthew"{
 }
 EOF
 }
-
-
-
- 
-# resource "aws_s3_bucket" "aws_glue_databucket"{
-#     bucket = join("-", ["aws","glue","data","bucket"])
-#     versioning{
-#         enabled = true
-#     }
-#     tags = {
-#         env = "Glue"
-#     }
-#     logging {
-#         target_bucket = aws_s3_bucket.log_bucket.id
-#         target_prefix = "Log/land_bucket"
-#     }
-# }
