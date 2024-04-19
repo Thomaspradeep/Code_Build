@@ -18,9 +18,9 @@ variable "environment" {
     default = "preprod" 
 }
 
-# variable "clients_list"{
-#     type = map(any)
-# }
+variable "clients_list"{
+    type = map(any)
+}
 
 variable "lambda_role"{
     type = string
