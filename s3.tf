@@ -49,13 +49,13 @@ resource "aws_s3_bucket" "glue_bucket_matthew" {
 #  }
 
  # Objects Modules
-# module "glue_bucket_matthew"{
-#      for_each = var.clients_list
-#      source = "./modules/client_bucket_directories"
+module "glue_bucket_matthew"{
+     for_each = var.clients_list
+     source = "./modules/client_bucket_directories"
     
-#      bucket_id = aws_s3_bucket.glue_bucket_matthew.id
-#      client_name = each.key
-#  }
+     bucket_id = aws_s3_bucket.glue_bucket_matthew.id
+     client_name = each.key
+ }
 
  
 
