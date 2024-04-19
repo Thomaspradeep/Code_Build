@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "matthew-bucket-91423"
+    bucket = "matthews-bucket-91423"
     key    = "dev/terraform.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 
