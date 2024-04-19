@@ -241,3 +241,42 @@ resource "aws_iam_policy" "User_Assume_Role"{
 }
 EOF
 }
+
+resource "aws_iam_policy" "Ec2_Allow_policy"{
+  name = "Ec2-Allow-Policy"
+  description = "E2 allow and deny policy "
+  path = "/"
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowEC2Access",
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:Region": "us-east-1"
+                },
+                "StringEqualsIfExists": {
+                    "ec2:ResourceTag/env": [
+                        "dev",
+                        "prod"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyVolumeAccess",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:DeleteVolume",
+                "ec2:CreateVolume"
+            ],
+            "Resource": "arn:aws:ec2:*:941598205732:volume/*"
+        }
+    ]
+}
+EOF
+}
