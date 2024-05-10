@@ -40,6 +40,6 @@ resource "aws_cloudwatch_event_rule" "trigger_rule" {
 resource "aws_cloudwatch_event_target" "glue_job_target" {
   rule      = aws_cloudwatch_event_rule.trigger_rule.name
   target_id = "glue-job-target"
-  arn       = aws_glue_job.MyFirstJob.id
+  arn       = aws_glue_job.MyFirstJob.arn
 }
 
