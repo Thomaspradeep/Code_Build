@@ -34,7 +34,7 @@ resource "aws_glue_job" "MyFirstJob" {
 
 resource "aws_cloudwatch_event_rule" "trigger_rule" {
   name                = "glue-job-trigger-rule"
-  schedule_expression = "cron(15 * * * *)"  # Trigger daily at midnight UTC
+  schedule_expression = "rate(10 minutes)"  # Trigger daily at midnight UTC
 }
 
 resource "aws_cloudwatch_event_target" "glue_job_target" {
