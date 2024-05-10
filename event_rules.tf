@@ -18,3 +18,28 @@
 # }
 # EOF
 # }
+
+resource "aws_glue_job" "MyFirstJob" {
+  name          = "MyFirstJob"
+  description   = "Example Glue job"
+  role_arn      = "arn:aws:iam::941598205732:role/service-role/AWSGlueServiceRole-Test"
+  command {
+    name   = "glueetl"
+    script_location = "s3://glue-bucket-matthew/script.py"
+  }
+  default_arguments = {
+    "--job-language" = "python"
+  }
+}
+
+resource "aws_cloudwatch_event_rule" "trigger_rule" {
+  name                = "glue-job-trigger-rule"
+  schedule_expression = "cron(15 * * * *)"  # Trigger daily at midnight UTC
+}
+
+resource "aws_cloudwatch_event_target" "glue_job_target" {
+  rule      = aws_cloudwatch_event_rule.trigger_rule.name
+  target_id = "glue-job-target"
+  arn       = aws_glue_job.MyFirstJob.arn
+}
+
